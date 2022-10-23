@@ -1,0 +1,16 @@
+---
+ - host: all
+   remote_user: ec2-user
+   become: true
+   become_user: root
+   gather_facts: true
+   tasks:
+     - name: download wordpress
+       get_url:
+         url: 
+         dest: /var/www/html/
+     - name:
+       unarchive:
+         src: <path of the zip file>
+         dest: /var/www/html/
+
